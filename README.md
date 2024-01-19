@@ -9,6 +9,8 @@ Completely usable in it's current state, though basic. If I ever come back to th
 
 No guarantees are made as to the chances of any of those being implemented. Feel free to PR.
 
+Most of the basic movement code is lifted and adjusted from [this article by Flafla2](https://adrianb.io/2015/02/14/bunnyhop.html). Go give it a read!
+
 ## Usage
 Create a new BHop3D node:
 
