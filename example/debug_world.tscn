@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://dafpnrc0x0g1s"]
+
+[ext_resource type="Script" path="res://addons/bhop3d/src/bhop3d.gd" id="1_pa3ct"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ixcmd"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_s8xgq"]
+sky_material = SubResource("ProceduralSkyMaterial_ixcmd")
+
+[sub_resource type="Environment" id="Environment_138gm"]
+background_mode = 2
+sky = SubResource("Sky_s8xgq")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_banh5"]
+albedo_color = Color(0.145098, 0.145098, 0.145098, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vtg12"]
+
+[node name="Debug World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_138gm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+use_collision = true
+size = Vector3(500, 0.2, 500)
+material = SubResource("StandardMaterial3D_banh5")
+
+[node name="BHop3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_pa3ct")
+jump_when_held = true
+move_forward = "forward"
+move_backward = "backward"
+move_left = "left"
+move_right = "right"
+jump = "jump"
+camera = NodePath("Camera3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BHop3D"]
+shape = SubResource("CapsuleShape3D_vtg12")
+
+[node name="Camera3D" type="Camera3D" parent="BHop3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+use_collision = true
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -3)
+use_collision = true

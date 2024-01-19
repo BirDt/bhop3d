@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100.88873mm"
+   height="65.132469mm"
+   viewBox="0 0 100.88873 65.132467"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0683582"
+     inkscape:cx="206.39145"
+     inkscape:cy="129.17016"
+     inkscape:window-width="1916"
+     inkscape:window-height="1049"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="powermask"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1"
+       uri="#mask-powermask-path-effect3"
+       invert="false"
+       hide_mask="false"
+       background="true"
+       background_color="#ffffffff" />
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+    <marker
+       markerWidth="1.05"
+       markerHeight="0.99999994"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       id="CapRibbon1"
+       viewBox="0 0 1.05 1"
+       inkscape:stockid="Ribbon cap"
+       style="overflow:visible"
+       preserveAspectRatio="xMidYMid"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         style="fill:context-stroke;stroke-linecap:butt"
+         d="M 0,-1 H 2 L 1,0 2,1 H 0 L -0.1,0 Z"
+         sodipodi:nodetypes="sssssscsss"
+         transform="scale(0.5)"
+         id="path62" />
+    </marker>
+    <filter
+       id="mask-powermask-path-effect3_inverse"
+       inkscape:label="filtermask-powermask-path-effect3"
+       style="color-interpolation-filters:sRGB"
+       height="100"
+       width="100"
+       x="-50"
+       y="-50">
+      <feColorMatrix
+         id="mask-powermask-path-effect3_primitive1"
+         values="1"
+         type="saturate"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         id="mask-powermask-path-effect3_primitive2"
+         values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0 "
+         in="fbSourceGraphic" />
+    </filter>
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask-powermask-path-effect3">
+      <path
+         id="mask-powermask-path-effect3_box"
+         style="fill:#ffffff;fill-opacity:1"
+         d="m 64.732233,125.01395 h 86.428757 v 19.82519 H 64.732233 Z" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.465;stroke-dasharray:19.72, 9.85999;stroke-dashoffset:6.16249;stroke-opacity:1"
+         id="rect3"
+         width="22.032444"
+         height="15.65476"
+         x="95.047821"
+         y="119.73"
+         d="m 95.047821,119.73 h 22.032449 v 15.65476 H 95.047821 Z" />
+    </mask>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-49.272255,-78.706672)">
+    <path
+       style="fill:none;stroke:#fc7f7f;stroke-width:2.465;stroke-dasharray:none;stroke-opacity:1"
+       id="path1"
+       mask="url(#mask-powermask-path-effect3)"
+       inkscape:path-effect="#path-effect3"
+       sodipodi:type="arc"
+       sodipodi:cx="107.94661"
+       sodipodi:cy="134.92654"
+       sodipodi:rx="40.981876"
+       sodipodi:ry="7.6800971"
+       d="m 148.92849,134.92654 a 40.981876,7.6800971 0 0 1 -40.98188,7.6801 40.981876,7.6800971 0 0 1 -40.981877,-7.6801 40.981876,7.6800971 0 0 1 40.981877,-7.68009 40.981876,7.6800971 0 0 1 40.98188,7.68009 z" />
+    <path
+       style="fill:none;stroke:#fc7f7f;stroke-width:2.465;stroke-dasharray:19.72, 9.86;stroke-dashoffset:6.1625;stroke-opacity:1;marker-start:url(#CapRibbon1);marker-end:url(#DartArrow)"
+       d="m 147.05194,97.564871 c -33.26959,-12.94166 -40.32991,35.496109 -40.32991,35.496109 0,0 -27.858614,-61.461508 -45.869504,-45.657722"
+       id="path2"
+       sodipodi:nodetypes="ccc" />
+  </g>
+</svg>
