@@ -111,7 +111,6 @@ func get_next_velocity(previousVelocity, delta):
 	velocity += Vector3.DOWN * get_gravity(delta)
 	
 	# Apply jump if desired
-	# Godot won't let me put the ternary if/else in the if statement ahead
 	if (Input.is_action_pressed(jump) if jump_when_held else Input.is_action_just_pressed(jump)) \
 			and move_enabled and grounded:
 		velocity.y = get_jump()
