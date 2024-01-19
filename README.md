@@ -11,14 +11,17 @@ No guarantees are made as to the chances of any of those being implemented. Feel
 
 ## Usage
 Create a new BHop3D node:
+
 ![image](https://github.com/BirDt/bhop3d/assets/24282498/0d6eed97-f3ed-4de8-93bc-344e776db2bf)
 
 
 The BHop3D node extends Godot's CharacterBody3D. It therefore needs a CollisionShape3D. 
 Additionally, BHop3D provides mouse input/look logic, so create a child Camera3D as well.
+
 ![image](https://github.com/BirDt/bhop3d/assets/24282498/aae253e4-9ad0-4dd6-a53e-ad0ac7837ddb)
 
 To use the built-in camera look logic, set the Camera property under the Controlled Nodes category here:
+
 ![image](https://github.com/BirDt/bhop3d/assets/24282498/836f57fd-b4fa-42b7-8b71-5fb6e7c51a14)
 
 All code is commented to explain the export values, but for reference:
