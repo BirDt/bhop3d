@@ -98,8 +98,10 @@ func get_next_velocity(previousVelocity, delta):
 	var max_vel = max_ground_velocity if grounded else max_air_velocity
 	var accel = ground_accelerate if grounded else air_accelerate
 	
+	print(grounded, frame_timer, bhop_frames)
+	
 	# Apply friction if player is grounded, and if the frame_timer indicates it should be applied
-	if grounded and (frame_timer > bhop_frames):
+	if grounded and (frame_timer >= bhop_frames):
 		var speed = previousVelocity.length()
 		if speed != 0:
 			var drop = speed * friction * delta
