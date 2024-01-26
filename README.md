@@ -43,3 +43,9 @@ All code is commented to explain the export values, but for reference:
   - **jump_force**: Self explanatory.
   - **friction**: Self explanatory.
   - **bhop_frames**: How many frames a player can be grounded for while a bunnyhop can still be performed.
+- **Debug**
+  - **debug_mode_enabled**: Whether any assigned debug raycasts be updated each frame.
+  - **debug_wishdir_raycast**: The raycast to update to display the desired input direction.
+  - **debug_velocity_raycast**: The raycast to update to display the current velocity (sans the Y component).
+
+**A note about debug mode**: Very primitive, best used when only looking in a straight line.
