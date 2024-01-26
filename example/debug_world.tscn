@@ -44,8 +44,8 @@ move_backward = "backward"
 move_left = "left"
 move_right = "right"
 jump = "jump"
+additive_bhop = false
 camera = NodePath("Camera3D")
-debug_mode_enabled = true
 debug_wishdir_raycast = NodePath("DirCast")
 debug_velocity_raycast = NodePath("VelCast")
 

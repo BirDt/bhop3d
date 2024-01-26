@@ -39,6 +39,9 @@ extends CharacterBody3D
 @export var friction : float = 6
 ## Bunnyhop window frame length
 @export var bhop_frames : int = 2
+## Whether bunnyhopping should be 'additive' - whether it should 
+## converge to the player's wishdir
+@export var additive_bhop : bool = true
 
 @export_category("Controlled Nodes")
 ## Camera to update with mouse controls
@@ -103,8 +106,7 @@ func accelerate(accelDir, prevVelocity, acceleration, max_vel, delta):
 ## Get intended velocity for the next frame
 func get_next_velocity(previousVelocity, delta):
 	var grounded = is_on_floor()
-	var max_vel = max_ground_velocity if grounded else max_air_velocity
-	var accel = ground_accelerate if grounded else air_accelerate
+	var can_jump = grounded # Jumping is a seperate var in case of additive bunnyhopping modifying grounded
 	
 	# Apply friction if player is grounded, and if the frame_timer indicates it should be applied
 	if grounded and (frame_timer >= bhop_frames):
@@ -112,6 +114,14 @@ func get_next_velocity(previousVelocity, delta):
 		if speed != 0:
 			var drop = speed * friction * delta
 			previousVelocity *= max(speed - drop, 0) / speed
+	else:
+		# If bunnyhopping is additive, we should use the air velocity and accelerate values for all frames
+		# that the bunnyhop is possible
+		if not additive_bhop:
+			grounded = false
+	
+	var max_vel = max_ground_velocity if grounded else max_air_velocity
+	var accel = ground_accelerate if grounded else air_accelerate
 	
 	# Calculate velocity for next frame
 	var velocity = accelerate(get_wishdir(), previousVelocity, accel, max_vel, delta)
@@ -120,7 +130,9 @@ func get_next_velocity(previousVelocity, delta):
 	
 	# Apply jump if desired
 	if (Input.is_action_pressed(jump) if jump_when_held else Input.is_action_just_pressed(jump)) \
-			and move_enabled and grounded:
+			and move_enabled and can_jump:
+		print(frame_timer, "/",bhop_frames)
+		print(grounded)
 		velocity.y = get_jump()
 	
 	# Return the new velocity
@@ -137,6 +149,8 @@ func update_frame_timer():
 
 ## Get frame velocity and update character body
 func handle_movement(delta):
+	# Update the bhop frame timer
+	update_frame_timer() 
 	velocity = get_next_velocity(velocity, delta)
 	move_and_slide()
 
@@ -144,10 +158,12 @@ func handle_movement(delta):
 func draw_debug():
 	if not debug_mode_enabled:
 		return
+	var debug_velocity = velocity
+	## We don't usually want to visualize the y component here
+	debug_velocity.y = 0
+	# Print velocity in debug mode
+	print("BHop3D | Velocity: ", debug_velocity.length())
 	if debug_velocity_raycast: 
-		var debug_velocity = velocity
-		## We don't usually want to visualize the y component here
-		debug_velocity.y = 0
 		debug_velocity_raycast.target_position = debug_velocity
 	if debug_wishdir_raycast: 
 		debug_wishdir_raycast.target_position = get_wishdir()
