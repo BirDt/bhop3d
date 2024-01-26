@@ -44,6 +44,14 @@ extends CharacterBody3D
 ## Camera to update with mouse controls
 @export var camera : Camera3D
 
+@export_category("Debug")
+## Whether to look for and update debug raycasts
+@export var debug_mode_enabled : bool = false
+## Raycast to update with wishdir
+@export var debug_wishdir_raycast : RayCast3D
+## Raycast to update with velocity
+@export var debug_velocity_raycast : RayCast3D
+
 ## Utility function for setting mouse mode, always visible if camera is unset
 func update_mouse_mode():
 	if look_enabled and camera:
@@ -132,9 +140,22 @@ func handle_movement(delta):
 	velocity = get_next_velocity(velocity, delta)
 	move_and_slide()
 
+## Conditionally update debug raycasts
+func draw_debug():
+	if not debug_mode_enabled:
+		return
+	if debug_velocity_raycast: 
+		var debug_velocity = velocity
+		## We don't usually want to visualize the y component here
+		debug_velocity.y = 0
+		debug_velocity_raycast.target_position = debug_velocity
+	if debug_wishdir_raycast: 
+		debug_wishdir_raycast.target_position = get_wishdir()
+
 ### Godot internal functions
 func _physics_process(delta):
 	handle_movement(delta)
+	draw_debug()
 
 func _unhandled_input(event):
 	mouse_look(event)
