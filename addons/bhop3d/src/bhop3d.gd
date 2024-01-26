@@ -129,7 +129,6 @@ func update_frame_timer():
 
 ## Get frame velocity and update character body
 func handle_movement(delta):
-	print(velocity.length())
 	velocity = get_next_velocity(velocity, delta)
 	move_and_slide()
 
