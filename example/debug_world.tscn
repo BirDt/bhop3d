@@ -35,7 +35,7 @@ use_collision = true
 size = Vector3(500, 0.2, 500)
 material = SubResource("StandardMaterial3D_banh5")
 
-[node name="BHop3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera")]
+[node name="BHop3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("camera", "debug_wishdir_raycast", "debug_velocity_raycast")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("1_pa3ct")
 jump_when_held = true
@@ -45,12 +45,23 @@ move_left = "left"
 move_right = "right"
 jump = "jump"
 camera = NodePath("Camera3D")
+debug_mode_enabled = true
+debug_wishdir_raycast = NodePath("DirCast")
+debug_velocity_raycast = NodePath("VelCast")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BHop3D"]
 shape = SubResource("CapsuleShape3D_vtg12")
 
 [node name="Camera3D" type="Camera3D" parent="BHop3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="VelCast" type="RayCast3D" parent="BHop3D"]
+collide_with_bodies = false
+debug_shape_custom_color = Color(0.380392, 0.490196, 1, 1)
+
+[node name="DirCast" type="RayCast3D" parent="BHop3D"]
+exclude_parent = false
+debug_shape_custom_color = Color(1, 0.0313726, 0, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
