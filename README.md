@@ -43,6 +43,7 @@ All code is commented to explain the export values, but for reference:
   - **jump_force**: Self explanatory.
   - **friction**: Self explanatory.
   - **bhop_frames**: How many frames a player can be grounded for while a bunnyhop can still be performed.
+  - **additive_bhop**: When enabled, player velocity converges to input direction. When disabled, velocity maintains a semi-constant offset from input direction (similar to some Source games, such as Counter Strike 2).
 - **Debug**
   - **debug_mode_enabled**: Whether any assigned debug raycasts be updated each frame.
   - **debug_wishdir_raycast**: The raycast to update to display the desired input direction.
